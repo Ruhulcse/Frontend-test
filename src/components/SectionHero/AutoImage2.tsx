@@ -69,7 +69,7 @@ const AutoImage2: FC = () => {
   return (
     <>
       <div className=" relative">
-        <div className="card lg:w-64 md:w-72  w-44 bg-black p-2">
+        <div className="card lg:w-52 w-44 bg-black p-2">
           <div className="">
             <figure className="p-2 bg-[#0f172a] w-full md:max-h-52 max-h-28  ">
               <img
@@ -96,18 +96,18 @@ const AutoImage2: FC = () => {
             </div>
           </div>
         </div>
-        <div className=" absolute top-[-80%]  md:top-[-60%]    left-[50%] md:left-[40%] lg:left-[60%] bg-gray-200 py-2">
-          <div className="md:w-48 p-1   w-24  leading-tight">
+        <div className=" absolute top-[-80%]   md:top-[-60%]    left-[52%] md:left-[40%] lg:top-[-50%] lg:left-[45%] xl:left-[60%] xl:top-[-65%] bg-gray-200 py-2">
+          <div className=" xl:w-36 w-24 md:w-32 custom-style  leading-tight">
             <img src={stopthefake} alt="" />
             <div className=" card-body items-center text-center">
               <p className=" text-[6px] md:text-xs font-semibold">
                 Certificate of Authentication <br />
-                <span className="text-[6px] md:text-xs font-medium">
+                <span className="text-[6px] md:text-[8px] font-medium">
                   used by
                 </span>{" "}
                 <span className="uppercase">stopthefake</span>
               </p>
-              <p className="text-[6px] md:text-xs lg:text-[10px]">
+              <p className="text-[6px]  md:text-[8px]">
                 {plans[currentIndex].name}{" "}
                 <span>
                   is chicago lost and found <br /> {plans[currentIndex].name}
@@ -123,10 +123,10 @@ const AutoImage2: FC = () => {
               <p className=" text-[6px] md:text-xs my-2">
                 {plans[currentIndex].ptoken}
               </p>
-              <p className="uppercase text-[10px] md:text-sm">
+              <p className="uppercase text-[8px] md:text-sm">
                 checked @ <span className="text-xs">2024-01-27 11:32</span>
               </p>
-              <p className=" text-[6px] md:text-xs lg:text-[10px] text-center mt-1">
+              <p className=" text-[6px] md:text-xs lg:text-[8px] text-center mt-1">
                 only trust the documents that are hosted on{" "}
                 <a className="text-blue-800" href="">
                   stopthefake.fr

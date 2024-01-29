@@ -1,4 +1,5 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useEffect, useState } from "react";
+import axios from "../../axios";
 import client01 from "../../images/clientSay1.png";
 import client03 from "../../images/clientSay4.png";
 import client02 from "../../images/clientSayMain.png";
@@ -16,34 +17,36 @@ const SectionHero: FC<SectionHeroProps> = ({
   heading = "REAL OR REPLICA? GET INSTANT AUTHENTIFICATION",
   subHeading = "Check the authenticity of all your items by fashion professionals scrutinizing the smallest details.",
 }) => {
-  const plans = [
-    {
-      id: 1,
-      name: "T-shirt",
-      featuredImage: "../../images/gucci.jpeg",
-    },
-    {
-      id: 2,
-      name: "Sneakers",
-      featuredImage: "../../images/gucci.jpeg",
-    },
-    {
-      id: 3,
-      name: "Hoodies/Jackets",
-      featuredImage: "../../images/gucci.jpeg",
-    },
-  ];
+  const [legitcheckCount, setLegitCheckCount] = useState(0);
+  const [pass, setPass] = useState(0);
+  const [notpass, setNotPass] = useState(0);
+  useEffect(() => {
+    const getProducts = async (page: any) => {
+      await axios
+        .get("/products?page=" + page)
+        .then((resp: any) => {
+          setLegitCheckCount(resp.data.count);
+          console.log(legitcheckCount);
+          setPass(resp.data.pass);
+          console.log(pass);
+          setNotPass(resp.data.notPass);
+          console.log(notpass);
+        })
+        .catch((err: any) => {});
+    };
+    getProducts(1);
+  }, []);
   return (
-    <div className=" max-w-7xl mx-auto py-8 p-2 mt-10">
-      <div className="flex flex-col lg:flex-row gap-6 md:gap-10">
+    <div className="max-w-6xl mx-auto py-8 p-2 mt-10  ">
+      <div className="flex flex-col lg:flex-row  justify-between gap-5 md:gap-6 ">
         {/* left side */}
-        <div className="flex-1 text-center items-center px-2 md:px-4 py-0 md:py-10 justify-between">
+        <div className="flex-1 px-2 md:px-4 py-0 md:py-10 justify-between ">
           <div className="py-4 md:py-10">
-            <h1 className="text-2xl md:text-4xl  font-semibold  md:text-start mb-6">
-              Get your Sneakers streetwear <br /> luxury clothing and
-              accessories <br /> legit check
+            <h1 className="text-2xl md:text-3xl lg:text-4xl  font-semibold  md:text-start mb-6">
+              Get your Sneakers streetwear luxury clothing and accessories{" "}
+              <br /> legit check
             </h1>
-            <button className=" bg-[#4ad218] text-white text-2xl md:text-4xl font-bold p-5   rounded-2xl justify-center items-center my-10">
+            <button className=" bg-[#4ad218] text-white text-2xl md:text-3xl lg:text-4xl font-bold p-5   rounded-2xl justify-center text-center items-center my-10">
               Legit check now{" "}
             </button>
           </div>
@@ -75,7 +78,7 @@ const SectionHero: FC<SectionHeroProps> = ({
                     <svg
                       className="w-4 h-4 text-yellow-300 me-1"
                       aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns="http://w...content-available-to-author-only...3.org/2000/svg"
                       fill="currentColor"
                       viewBox="0 0 22 20"
                     >
@@ -84,7 +87,7 @@ const SectionHero: FC<SectionHeroProps> = ({
                     <svg
                       className="w-4 h-4 text-yellow-300 me-1"
                       aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns="http://w...content-available-to-author-only...3.org/2000/svg"
                       fill="currentColor"
                       viewBox="0 0 22 20"
                     >
@@ -93,7 +96,7 @@ const SectionHero: FC<SectionHeroProps> = ({
                     <svg
                       className="w-4 h-4 text-yellow-300 me-1"
                       aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns="http://w...content-available-to-author-only...3.org/2000/svg"
                       fill="currentColor"
                       viewBox="0 0 22 20"
                     >
@@ -102,7 +105,7 @@ const SectionHero: FC<SectionHeroProps> = ({
                     <svg
                       className="w-4 h-4 text-yellow-300 me-1"
                       aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns="http://w...content-available-to-author-only...3.org/2000/svg"
                       fill="currentColor"
                       viewBox="0 0 22 20"
                     >
@@ -111,7 +114,7 @@ const SectionHero: FC<SectionHeroProps> = ({
                     <svg
                       className="w-4 h-4 text-gray-300 me-1 dark:text-gray-500"
                       aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns="http://w...content-available-to-author-only...3.org/2000/svg"
                       fill="currentColor"
                       viewBox="0 0 22 20"
                     >
@@ -119,30 +122,30 @@ const SectionHero: FC<SectionHeroProps> = ({
                     </svg>
                   </div>
                 </div>
-                <div className="text-xs md:text-2xl text-gray-600">
-                  102.4k Reviews
-                </div>
+                <div className="text-xl  text-gray-600">102.4k Reviews</div>
               </div>
             </div>
             {/* review section 02 */}
             <div className="flex flex-col ">
               <div className="flex gap-1">
-                <p className="text-xl md:text-4xl font-bold">1,718,658</p>
+                <p className="text-xl md:text-4xl font-bold">
+                  {legitcheckCount}
+                </p>
                 <div>
                   <div className="flex gap-1 justify-center items-center">
                     <div className="w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-[#22d3ee]"></div>
                     <p className="font-semibold text-gray-400 text-sm">
-                      1,078,044
+                      {pass}
                     </p>
                   </div>
                   <div className="flex gap-1 items-center font-semibold">
                     <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-[#e11d48]"></div>
-                    <p className="text-gray-400 text-sm">455,130</p>
+                    <p className="text-gray-400 text-sm">{notpass}</p>
                   </div>
                 </div>
               </div>
               <div>
-                <p className="text-xs md:text-2xl text-gray-600 text-start">
+                <p className="text-xl text-gray-600 text-start">
                   Sneakers Checked
                 </p>
               </div>
@@ -150,19 +153,19 @@ const SectionHero: FC<SectionHeroProps> = ({
           </div>
         </div>
         {/* right side */}
-        <div className="flex-1 text-center items-center py-0 md:py-10 mt-20 md:mt-0 ">
-          <p className="text-xl md:text-3xl font-semibold ">
+        <div className="flex-1  py-0 md:py-10 mt-20 md:mt-0 ">
+          <p className="text-xl md:text-3xl lg:text-xl xl:text-3xl font-semibold  text-center">
             <span className="text-blue-700">Real</span> or{" "}
             <span className="text-red-600">fake</span> <br /> you will know it
             now{" "}
           </p>
-          <div className="grid grid-cols-2 gap-2  md:gap-8 lg:gap-16  mt-10">
+          <div className="flex gap-2 mt-10">
             {/* card01 */}
-            <div className=" ">
+            <div className="flex-grow ">
               <AutoImage />
             </div>
             {/* card 02 */}
-            <div className=" md:mt-">
+            <div className=" flex-grow md:mt-">
               <AutoImage2 />
               {/* absulate */}
               {/* <div>djd</div> */}

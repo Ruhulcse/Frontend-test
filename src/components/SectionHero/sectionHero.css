@@ -15,3 +15,12 @@
     margin-bottom: 10px !important;
   }
 }
+@media (min-width: 1023px) and (max-width: 1193px) {
+  .custom-style {
+    max-width: 24rem;
+    font-size: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

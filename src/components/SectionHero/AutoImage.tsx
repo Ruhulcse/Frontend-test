@@ -51,7 +51,7 @@ const AutoImage: FC = () => {
 
   return (
     <>
-      <div className="card lg:w-64 md:w-72   w-44">
+      <div className="card lg:w-52   w-44">
         <figure className="pl-2 bg-[#0f172a] w-full max-h-28 md:max-h-52 ">
           <img
             src={plans[currentIndex].featuredImage}
@@ -72,7 +72,7 @@ const AutoImage: FC = () => {
         </div>
 
         <div className="card-actions justify-center items-center mt-4 md:mt-6">
-          <button className=" px-2 py-1 md:px-6 md:py-2 text-white text-xl md:text-2xl font-semibold bg-teal-700 w-[80%]">
+          <button className=" px-2 py-1 md:px-6 md:py-2 text-white text-xl  font-semibold bg-teal-700 w-[80%]">
             Buy Now
           </button>
         </div>
