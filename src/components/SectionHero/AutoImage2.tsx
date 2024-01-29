@@ -96,18 +96,18 @@ const AutoImage2: FC = () => {
             </div>
           </div>
         </div>
-        <div className=" absolute top-[-80%]   md:top-[-60%]    left-[52%] md:left-[40%] lg:top-[-50%] lg:left-[45%] xl:left-[60%] xl:top-[-65%] bg-gray-200 py-2">
-          <div className=" xl:w-36 w-24 md:w-32 custom-style  leading-tight">
+        <div className=" absolute top-[-60%]   md:top-[-30%]    left-[52%] md:left-[40%] lg:top-[-35%] lg:left-[42%] xl:left-[60%] xl:top-[-55%] bg-gray-200 py-2">
+          <div className=" xl:w-48 w-24 lg:w-32 md:w-28  custom-style  leading-tight">
             <img src={stopthefake} alt="" />
             <div className=" card-body items-center text-center">
-              <p className=" text-[6px] md:text-xs font-semibold">
+              <p className=" text-[6px] md:text-[10px] font-semibold">
                 Certificate of Authentication <br />
-                <span className="text-[6px] md:text-[8px] font-medium">
+                <span className="text-[6px] md:text-[8px] font-semibold">
                   used by
                 </span>{" "}
                 <span className="uppercase">stopthefake</span>
               </p>
-              <p className="text-[6px]  md:text-[8px]">
+              <p className="text-[6px]  lg:text-[8px]">
                 {plans[currentIndex].name}{" "}
                 <span>
                   is chicago lost and found <br /> {plans[currentIndex].name}
@@ -115,46 +115,48 @@ const AutoImage2: FC = () => {
               </p>
               <div className="flex justify-center items-center">
                 <img
-                  className="h-6 md:h-12 w-6 md:w-12 rounded-full"
+                  className="h-6 xl:h-12 w-6 xl:w-12 rounded-full"
                   src={plans[currentIndex].status}
                   alt=""
                 />
               </div>
-              <p className=" text-[6px] md:text-xs my-2">
+              <p className=" text-[6px] lg:text-xs lg:my-2">
                 {plans[currentIndex].ptoken}
               </p>
-              <p className="uppercase text-[8px] md:text-sm">
-                checked @ <span className="text-xs">2024-01-27 11:32</span>
+              <p className="uppercase text-[8px] lg:text-[10px]">
+                checked @ <span className="text-[8px]">2024-01-27 11:32</span>
               </p>
-              <p className=" text-[6px] md:text-xs lg:text-[8px] text-center mt-1">
-                only trust the documents that are hosted on{" "}
-                <a className="text-blue-800" href="">
-                  stopthefake.fr
-                </a>{" "}
-                all documents will be stored on our domain. other documents will
-                be considered forgery.
-              </p>
+              <div className="text-center justify-center items-center ">
+                <p className="  text-[6px] xl:text-[10px] text-center xl:mt-1  ">
+                  only trust the documents that are hosted on{" "}
+                  <a className="text-blue-900 font-semibold" href="">
+                    stopthefake.fr
+                  </a>{" "}
+                  all documents will be stored on our domain. other documents
+                  will be considered forgery.
+                </p>
+              </div>
               <div className=" justify-center items-center">
                 <div className="flex justify-center items-center">
                   <img
-                    className=" w-3 h-3 md:w-6 md:h-6 rounded-full"
+                    className=" w-3 h-3 xl:w-6 xl:h-6 rounded-full"
                     src={insta}
                     alt=""
                   />
                   <img
-                    className="w-3 h-3 md:w-6 md:h-6 rounded-full"
+                    className="w-3 h-3 xl:w-6 xl:h-6 rounded-full"
                     src={tiktok}
                     alt=""
                   />
                 </div>
                 <div className="flex justify-center items-center">
                   <img
-                    className=" w-3 h-3 md:w-6 md:h-6 rounded-full"
+                    className=" w-3 h-3 xl:w-6 xl:h-6 rounded-full"
                     src={youtube}
                     alt=""
                   />
                   <img
-                    className=" w-3 h-3 md:w-6 md:h-6 rounded-full"
+                    className=" w-3 h-3 xl:w-6 xl:h-6 rounded-full"
                     src={twitter}
                     alt=""
                   />

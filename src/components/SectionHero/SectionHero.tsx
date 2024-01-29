@@ -1,4 +1,5 @@
 import { FC, ReactNode, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "../../axios";
 import client01 from "../../images/clientSay1.png";
 import client03 from "../../images/clientSay4.png";
@@ -36,19 +37,25 @@ const SectionHero: FC<SectionHeroProps> = ({
     };
     getProducts(1);
   }, []);
+
   return (
     <div className="max-w-6xl mx-auto py-8 p-2 mt-10  ">
       <div className="flex flex-col lg:flex-row  justify-between gap-5 md:gap-6 ">
         {/* left side */}
         <div className="flex-1 px-2 md:px-4 py-0 md:py-10 justify-between ">
           <div className="py-4 md:py-10">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl  font-semibold  md:text-start mb-6">
+            <h1 className="text-2xl md:text-2xl lg:text-3xl  font-semibold  md:text-start mb-6">
               Get your Sneakers streetwear luxury clothing and accessories{" "}
               <br /> legit check
             </h1>
-            <button className=" bg-[#4ad218] text-white text-2xl md:text-3xl lg:text-4xl font-bold p-5   rounded-2xl justify-center text-center items-center my-10">
-              Legit check now{" "}
-            </button>
+            <Link
+              to="/page-upload-item"
+              className="flex justify-center items-center"
+            >
+              <button className=" bg-[#4ad218] text-white text-2xl md:text-3xl lg:text-4xl font-bold p-5 flex justify-center  rounded-2xl text-center items-center my-10">
+                Legit check now{" "}
+              </button>
+            </Link>
           </div>
           <div className="flex gap-2 md:gap-6  justify-between  ">
             <div className="flex gap-2  md:gap-4 ">
@@ -161,11 +168,11 @@ const SectionHero: FC<SectionHeroProps> = ({
           </p>
           <div className="flex gap-2 mt-10">
             {/* card01 */}
-            <div className="flex-grow ">
+            <div className="flex-grow justify-center items-center ">
               <AutoImage />
             </div>
             {/* card 02 */}
-            <div className=" flex-grow md:mt-">
+            <div className=" flex-grow md:mt- justify-center items-center">
               <AutoImage2 />
               {/* absulate */}
               {/* <div>djd</div> */}
