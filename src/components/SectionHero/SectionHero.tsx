@@ -165,6 +165,7 @@ const SectionHero: FC<SectionHeroProps> = ({
             <div className=" md:mt-">
               <AutoImage2 />
               {/* absulate */}
+              {/* <div>djd</div> */}
             </div>
           </div>
         </div>
