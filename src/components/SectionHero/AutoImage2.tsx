@@ -97,7 +97,7 @@ const AutoImage2: FC = () => {
           </div>
         </div>
         <div className=" absolute top-[-60%]   md:top-[-30%]    left-[52%] md:left-[40%] lg:top-[-35%] lg:left-[42%] xl:left-[60%] xl:top-[-55%] bg-gray-200 py-2">
-          <div className=" xl:w-48 w-24 lg:w-32 md:w-28  custom-style  leading-tight">
+          <div className=" xl:w-40 w-24 lg:w-32 md:w-28  custom-style  leading-tight">
             <img src={stopthefake} alt="" />
             <div className=" card-body items-center text-center">
               <p className=" text-[6px] md:text-[10px] font-semibold">
@@ -115,12 +115,12 @@ const AutoImage2: FC = () => {
               </p>
               <div className="flex justify-center items-center">
                 <img
-                  className="h-6 xl:h-12 w-6 xl:w-12 rounded-full"
+                  className="h-6 xl:h-10 w-6 xl:w-10 rounded-full"
                   src={plans[currentIndex].status}
                   alt=""
                 />
               </div>
-              <p className=" text-[6px] lg:text-xs lg:my-2">
+              <p className=" text-[6px] lg:text-[10px] lg:my-1">
                 {plans[currentIndex].ptoken}
               </p>
               <p className="uppercase text-[8px] lg:text-[10px]">
@@ -139,24 +139,24 @@ const AutoImage2: FC = () => {
               <div className=" justify-center items-center">
                 <div className="flex justify-center items-center">
                   <img
-                    className=" w-3 h-3 xl:w-6 xl:h-6 rounded-full"
+                    className=" w-3 h-3 xl:w-4 xl:h-4 rounded-full"
                     src={insta}
                     alt=""
                   />
                   <img
-                    className="w-3 h-3 xl:w-6 xl:h-6 rounded-full"
+                    className="w-3 h-3 xl:w-4 xl:h-4 rounded-full"
                     src={tiktok}
                     alt=""
                   />
                 </div>
                 <div className="flex justify-center items-center">
                   <img
-                    className=" w-3 h-3 xl:w-6 xl:h-6 rounded-full"
+                    className=" w-3 h-3 xl:w-4 xl:h-4 rounded-full"
                     src={youtube}
                     alt=""
                   />
                   <img
-                    className=" w-3 h-3 xl:w-6 xl:h-6 rounded-full"
+                    className=" w-3 h-3 xl:w-4 xl:h-4 rounded-full"
                     src={twitter}
                     alt=""
                   />
